@@ -1,0 +1,25 @@
+name: For version catalog test
+
+on:
+  workflow_dispatch:
+    inputs:
+      version-catalog-repository:
+        description: 'version catalog repository name'
+        default: 'disdong123/version-catalog'
+        required: true
+      version-catalog-ref:
+        description: 'version catalog reference'
+        required: true
+      java-version:
+        description: 'java version'
+        default: '21'
+        required: false
+
+jobs:
+  version-catalog-test:
+    uses: disdong123/disdong-actions/.github/workflows/version-catalog-test.yaml@main
+    with:
+      version-catalog-repository: ${{ inputs.version-catalog-repository }}
+      version-catalog-ref: ${{ inputs.version-catalog-ref }}
+      java-version: ${{ inputs.java-version }}
+    secrets: inherit

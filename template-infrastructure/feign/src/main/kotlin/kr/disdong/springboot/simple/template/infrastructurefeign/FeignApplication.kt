@@ -1,0 +1,10 @@
+package kr.disdong.springboot.simple.template.infrastructurefeign
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan
+import org.springframework.cloud.openfeign.EnableFeignClients
+
+@SpringBootApplication
+@EnableFeignClients
+@ConfigurationPropertiesScan
+class FeignApplication

@@ -1,0 +1,18 @@
+services:
+  mysql:
+    container_name: springboot_simple_template_mysql
+    image: mysql:8
+    ports:
+      - '3300:3306'
+    environment:
+      TZ: 'Asia/Seoul'
+      MYSQL_DATABASE: springboot_simple_template
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - ./infra/mysql/data:/var/lib/mysql
+    networks:
+      - springboot-simple-template
+networks:
+  springboot-simple-template:
+    name: springboot-simple-template
+    driver: bridge

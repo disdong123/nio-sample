@@ -1,0 +1,12 @@
+server:
+  servlet:
+    context-path: /api
+
+spring:
+  config:
+    import:
+      - persistence.yaml
+
+springdoc:
+  swagger-ui:
+    path: /docs
